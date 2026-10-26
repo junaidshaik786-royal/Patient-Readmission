@@ -1,0 +1,21 @@
+{
+  "file_sha256": "0689e7ec031237dc63031b938805c48377748761a3b26acab621567afa24df97",
+  "matches_reviewed_source": true,
+  "encounters": 101766,
+  "unique_patients": 71518,
+  "readmitted_lt30": 11357,
+  "readmitted_gt30": 35545,
+  "readmitted_no": 54864,
+  "readmission_30_encounter_percent": 11.16,
+  "mean_hospital_days": 4.4,
+  "mean_medications": 16.02,
+  "mean_lab_procedures": 43.1,
+  "missingness_percent": {
+    "weight": 96.86,
+    "medical_specialty": 49.08,
+    "payer_code": 39.56,
+    "race": 2.23,
+    "diag_1": 0.02
+  },
+  "disclosure": "Descriptive, encounter-level figures from historical 1999–2008 UCI source; not validated clinical predictions."
+}
