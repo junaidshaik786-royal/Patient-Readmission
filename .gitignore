@@ -1,0 +1,7 @@
+diabetic_data.csv
+diabetic_data.xlsx
+*.pbix
+__pycache__/
+*.pyc
+.env
+*.sql.gz
