@@ -1,74 +1,72 @@
 # Patient Readmission Analytics
-**Healthcare Business Analysis Capstone | SQL · Excel · Power BI**
+**Healthcare Business Analysis capstone | SQL · Excel · Power BI**
 
-## Project overview
+I used a public dataset of hospital encounters involving people with diabetes to explore one question: **what does the historical data show about readmissions within 30 days, and how could a reporting dashboard help a healthcare operations team investigate the pattern?**
 
-For my Business Analysis coursework, I explored a public dataset of hospital encounters involving people with diabetes. I wanted to understand what the historical data showed about readmissions within 30 days and how a reporting view could help a healthcare operations team investigate the pattern.
+The coursework included a Business Requirements Document (BRD), SQL and Excel analysis, and a Power BI dashboard. I have added reproducible validation code and supporting documentation so the calculations and assumptions are easier to review.
 
-I documented the business question and scope, defined the key measures, reviewed the data with SQL and Excel, and used Power BI visuals to summarize the results. This is an academic case study, not a live hospital implementation or a clinical prediction tool.
-
-## What I worked on
-
-- **Business requirements:** set out the objective, scope, stakeholders in the course scenario, reporting needs and acceptance criteria.
-- **Data analysis:** reviewed readmission categories, age groups, diagnoses and hospital-utilization measures.
-- **Reporting:** used SQL and Excel analysis and created a Power BI dashboard for comparing the recorded outcomes.
-- **Interpretation:** documented the findings, data-quality concerns and questions that would need further investigation before any operational action.
-
-## Key results
+## At a glance
 
 | Measure | Result |
 |---|---:|
 | Hospital encounters | **101,766** |
 | Distinct patient IDs | **71,518** |
-| Encounters labeled readmitted within 30 days | **11,357** |
+| Encounters labelled readmitted within 30 days (`<30`) | **11,357** |
 | Within-30-day readmission proportion per encounter | **11.16%** |
-| Average length of stay | **4.40 days** |
+| Average hospital stay | **4.40 days** |
 | Average medications per encounter | **16.02** |
 
-The denominator matters: the dataset contains 101,766 encounter records, not 101,766 different people. The 11.16% is a descriptive encounter-level proportion, not an individual patient's predicted risk.
+**Denominator note:** a person can appear in more than one encounter. The 11.16% is the share of encounter records labelled `<30`, not the share of unique patients and not a prediction of an individual's risk.
 
 ## Dashboard preview
 
-The screenshot below is from the coursework dashboard. It shows comparisons by readmission category, age, diagnosis and hospital-utilization measures.
+![Patient Readmission Analytics Power BI dashboard](https://github.com/user-attachments/assets/6ab2d441-ec97-4386-959b-6da4341d1cc0)
 
-![Power BI Patient Readmission Analytics Dashboard](https://github.com/user-attachments/assets/6ab2d441-ec97-4386-959b-6da4341d1cc0)
+[Dashboard and analysis screenshots](assets/README.md) · [Original coursework evidence report (PDF)](evidence/Patient_Readmission_Evidence_Report.pdf) · [Original coursework BRD (PDF)](evidence/Patient_Readmission_Original_BRD.pdf)
 
-[See the dashboard and analysis screenshots](assets/README.md)
+## What I worked on
+
+- **Requirements:** documented the business question, scope, reporting needs, stakeholder roles in the course scenario, KPIs and business rules.
+- **Analysis:** compared readmission labels, age bands, diagnoses and hospital-utilization measures.
+- **Reporting:** reviewed SQL/Excel summaries and built a one-page Power BI dashboard.
+- **Validation:** recalculated headline figures from the supplied CSV and checked the SQL queries against the same data.
+- **Documentation:** recorded metric definitions, data-quality concerns, limitations and links between requirements and evidence.
+
+The Python validator and SQL files in this repository are reproducibility companions prepared while organizing the portfolio. They are not represented as exact copies of the original coursework scripts.
 
 ## What stood out
 
-- **11.16%** of encounters carry the dataset's `<30` readmission label; **34.93%** carry the `>30` label.
-- In the 20–30 age band, **236 of 1,657 encounters (14.24%)** carry the `<30` label. This is an unadjusted comparison, not evidence that age caused the outcome.
-- Missing values are substantial in some fields: weight (**96.86%**), medical specialty (**49.08%**) and payer code (**39.56%**). Those fields need caution before being used to draw conclusions.
+- **11.16%** of encounter records carry the `<30` label; **34.93%** carry the `>30` label.
+- In the `[20-30)` age band, **236 of 1,657 encounters (14.24%)** carry the `<30` label. This is an unadjusted comparison; it does not explain why the outcome occurred.
+- Missing values are common in `weight` (**96.86%**), `medical_specialty` (**49.08%**) and `payer_code` (**39.56%**). Those fields need care before drawing conclusions from segmented charts.
 
-My main learning was to check the meaning of a metric and its denominator before interpreting a chart. A dashboard can make a pattern easier to see, but it cannot explain the cause by itself.
+One dashboard improvement I would make next is to separate the average-measures chart. Medications, procedures, diagnoses and hospital days use different units, so showing their averages on a shared scale can make comparisons harder to interpret.
 
-## Project documents and evidence
+## Project files
 
-| Artifact | What it contains |
-|---|---|
-| [Business Requirements Document](docs/BRD.md) | Project objective, scope, stakeholder roles, five requirements and acceptance criteria |
-| [KPI Dictionary](docs/KPI_DICTIONARY.md) | Definitions, formulas and denominator rules |
-| [SQL analysis queries](sql/02_readmission_analysis.sql) | Queries for counts, readmission categories, age groups and missingness |
-| [SQL table schema](sql/01_schema.sql) | Source-aligned table structure for reproducing the queries |
-| [Findings and limitations](docs/FINDINGS_AND_LIMITATIONS.md) | Results, interpretation and questions for further investigation |
-| [Data source and quality notes](docs/DATA_SOURCE.md) | Dataset provenance, field notes and reproduction instructions |
-| [Requirements traceability](docs/TRACEABILITY.md) | How requirements relate to evidence and outputs |
-| [Verified metrics](outputs/verified_metrics.json) | Recomputed headline totals and data-quality checks |
-| [Age-band summary](outputs/age_group_readmission_rates.csv) | Aggregated counts and encounter-level proportions |
-| [Original course evidence report (PDF)](evidence/Patient_Readmission_Evidence_Report.pdf) | 14-page screenshot evidence report with SQL, Excel and Power BI outputs |
-| [Original course BRD (PDF)](evidence/Patient_Readmission_Original_BRD.pdf) | Submitted coursework brief; contains proposed targets that were not measured results |
+- [Business Requirements Document](docs/BRD.md)
+- [KPI definitions and calculation rules](docs/KPI_DICTIONARY.md)
+- [SQL queries](sql/02_readmission_analysis.sql) and [table schema](sql/01_schema.sql)
+- [SQL setup guide](sql/README.md)
+- [Data source and reproducibility notes](docs/DATA_SOURCE.md)
+- [Findings and limitations](docs/FINDINGS_AND_LIMITATIONS.md)
+- [Requirements-to-evidence traceability](docs/TRACEABILITY.md)
+- [Verified metrics](outputs/verified_metrics.json) and [age-band summary](outputs/age_group_readmission_rates.csv)
+- [Validation script](scripts/validate_metrics.py) and [automated tests](tests/test_validate_metrics.py)
+- [Validation report](docs/VALIDATION_REPORT.md)
+- [Lessons learned and next iteration](docs/LESSONS_LEARNED.md)
 
-The SQL and Python validation files in this repository include reproducibility material prepared while organizing the portfolio. They are not represented as exact copies of the original course-submitted scripts. The editable Power BI `.pbix` file was not supplied.
+## Reproduce the numbers
 
-## Findings and limitations
+1. Download `diabetic_data.csv` from the [UCI dataset page](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals-for-years-1999-2008).
+2. Run `python scripts/validate_metrics.py /path/to/diabetic_data.csv`.
+3. Run `python -m unittest discover -s tests -v`.
+4. Follow the [SQL setup guide](sql/README.md) to import the CSV into MySQL 8 and run the queries.
 
-The source covers U.S. hospital encounters from **1999–2008**, so it should not be treated as a picture of current healthcare. Some patients have multiple encounters, several fields have extensive missing data, and the analysis is descriptive. I did not build or validate a predictive model, implement a hospital workflow, or measure a reduction in readmissions or financial savings.
+The source CSV used for validation contained 101,766 encounter rows and 50 columns. The raw patient-level dataset is not included here; only aggregate outputs are published.
 
-For a real project, I would first confirm definitions and reporting needs with current business and clinical stakeholders, then validate data quality and review the findings with qualified clinical staff before proposing any intervention.
+## Scope and limitations
 
-## Dataset
+This is an **academic portfolio project**, not paid work for a hospital. The source covers U.S. hospital encounters from **1999–2008**. The analysis is descriptive: I did not build or validate a clinical prediction model, deploy a hospital workflow, or measure a reduction in readmissions or financial savings. The original course brief contains proposed targets; they were not achieved or independently verified.
 
-[UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals+for+years+1999-2008) · [DOI 10.24432/C5230J](https://doi.org/10.24432/C5230J).
-
-**Project type:** Academic Healthcare Business Analysis / Reporting Analytics capstone.
+**Dataset:** Clore, Cios, DeShazo and Strack (2014), *Diabetes 130-US Hospitals for Years 1999–2008*, [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals-for-years-1999-2008), [DOI 10.24432/C5230J](https://doi.org/10.24432/C5230J).

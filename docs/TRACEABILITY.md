@@ -1,13 +1,15 @@
-# Requirements-to-Evidence Traceability
+# Requirements-to-evidence traceability
 
-This mapping applies to the revised academic portfolio BRD. It is **not** an original hospital-approved traceability document.
+This maps the revised portfolio BRD to the artifacts available in the repository. It is not a hospital-approved traceability matrix.
 
-| BRD requirement | Supporting output | Evidence status |
+| Requirement | Evidence | Status / qualification |
 |---|---|---|
-| BR-01 Encounter / patient / <30 totals | Supplied CSV verification; outputs/verified_metrics.json; course report screenshots | Validated aggregated counts |
-| BR-02 Separate readmission categories | KPI dictionary; outputs/verified_metrics.json; course SQL screenshots | Validated |
-| BR-03 Age, diagnosis and utilization comparisons | outputs/age_group_readmission_rates.csv; SQL companion; course Excel and Power BI screenshots | Descriptive only |
-| BR-04 Dashboard reporting | Original 14-page evidence report, Power BI screenshot | Screenshot demonstrated, editable PBIX not supplied |
-| BR-05 Data quality and constraints | docs/KPI_DICTIONARY.md; docs/DATA_SOURCE.md; docs/FINDINGS_AND_LIMITATIONS.md | Newly documented portfolio controls |
+| BR-01 — Encounter counts and early-readmission KPI | `outputs/verified_metrics.json`; original evidence report, pp. 2–4 and 9 | Recalculated from the supplied CSV |
+| BR-02 — Separate readmission labels | `sql/02_readmission_analysis.sql`; evidence report, pp. 3–4 | Counts and percentages use encounter records |
+| BR-03 — Compare age, diagnosis and utilization groups | `outputs/age_group_readmission_rates.csv`; SQL/Excel screenshots; evidence report, pp. 4–8 and 10–13 | Descriptive, unadjusted comparisons |
+| BR-04 — Dashboard view | Power BI screenshot; evidence report, pp. 9–12 | Screenshot evidence exists; report file is separately supplied by the candidate |
+| BR-05 — Document data quality and limits | KPI dictionary, findings and source notes | Documents missingness, source period and encounter-versus-patient distinction |
 
-**Evidence boundary:** The original course assignment supplied fictional stakeholders and estimated benefits, not real hospital engagement or measured impact. Companion SQL / Python scripts are newly created portfolio artifacts.
+## Scope boundary
+
+The original course BRD includes proposed targets and estimated benefits. They are not measured outcomes. The project does not represent real hospital stakeholder approval, a clinical intervention, model validation, production deployment or realized ROI.
