@@ -1,11 +1,7 @@
-# Download the public source dataset from UCI; do not commit raw rows.
+# Public source data is downloaded separately; do not commit raw rows.
 diabetic_data.csv
 diabetic_data.xlsx
 
-# Python local artifacts
-__pycache__/
-*.py[cod]
-
-# Local credentials and environment
+# Local credentials
 .env
 .env.*
