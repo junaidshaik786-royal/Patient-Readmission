@@ -1,7 +1,0 @@
-# Public source data is downloaded separately; do not commit raw rows.
-diabetic_data.csv
-diabetic_data.xlsx
-
-# Local credentials
-.env
-.env.*
