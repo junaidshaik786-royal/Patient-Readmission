@@ -1,18 +1,32 @@
 # SQL analysis
 
-These MySQL 8 query files were prepared as reproducibility companions for this portfolio. They are not represented as byte-for-byte copies of the original coursework SQL.
+I used these MySQL 8 scripts to set up the project table and explore the UCI hospital-encounter data in a database. They are reproducibility scripts for this portfolio, not byte-for-byte copies of the original coursework SQL.
 
-## Run the analysis
+## Files in this folder
+
+- [`01_schema.sql`](01_schema.sql) creates the `healthcare` database and the `diabetic_data` table.
+- [`02_readmission_analysis.sql`](02_readmission_analysis.sql) contains queries for the main counts, readmission categories, age bands, primary diagnosis codes, admission type, previous inpatient use and missing values.
+
+## Run it in MySQL Workbench
 
 1. Download `diabetic_data.csv` from the [UCI dataset page](../docs/DATA_SOURCE.md).
-2. In MySQL Workbench, run [`01_schema.sql`](01_schema.sql) to create `healthcare.diabetic_data`.
-3. Use **Table Data Import Wizard** to import the CSV, mapping the header row to the existing columns. Keep `?` values so missingness can be measured.
-4. Run [`02_readmission_analysis.sql`](02_readmission_analysis.sql).
+2. Open and run `01_schema.sql` to create the database and table.
+3. Use **Table Data Import Wizard** to load the CSV into `healthcare.diabetic_data`. Map the CSV header to the existing columns and keep `?` values so missingness can be checked.
+4. Open and run `02_readmission_analysis.sql`.
 
-The first query should return **101,766 encounters**, **71,518 distinct patient IDs**, **11,357 `<30` encounters**, and an **11.16%** encounter-level proportion.
+## Quick check
 
-## Validation status
+The summary query should return:
 
-All nine SELECT queries were executed against the supplied 101,766-row CSV loaded into SQLite, after removing the MySQL-specific `USE healthcare;` statement. The results reconciled with the Python validator. A MySQL server was not available in this environment, so MySQL Workbench import and execution still need a local run.
+| Measure | Expected result |
+|---|---:|
+| Encounter records | 101,766 |
+| Distinct patient IDs | 71,518 |
+| Encounters labelled `<30` | 11,357 |
+| `<30` encounters as a share of all encounters | 11.16% |
 
-The raw patient-level CSV, credentials and local file paths are not included in the repository.
+If the results differ, check that the full CSV was imported and that the header row was not loaded as data. Keep the distinction between encounters and unique patients: `encounter_id` identifies an encounter, while `patient_nbr` can repeat across encounters.
+
+The queries are descriptive. They help summarize the recorded data; they do not establish why readmission happened or predict an individual patient's outcome. The raw patient-level CSV is not included in this repository.
+
+See [dataset notes](../docs/DATA_SOURCE.md) and the [KPI dictionary](../docs/KPI_DICTIONARY.md) for definitions and source details.
