@@ -6,7 +6,7 @@ I used the UCI Diabetes 130-US Hospitals dataset (1999–2008) to explore record
 
 ## Dashboard
 
-![Preview of my existing six-visual Patient Readmission Analytics Dashboard](assets/Patient readmission Power_BI dashboard.png)
+![Preview of my existing six-visual Patient Readmission Analytics Dashboard](assets/pateintreadmissionpower_bidashboard.png)
 
 This image is a preview of my existing Power BI dashboard. **The PBIX and dashboard itself have not been changed.**
 
