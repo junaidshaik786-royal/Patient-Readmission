@@ -4,7 +4,7 @@ This is a healthcare analysis project I completed as coursework and am using in 
 
 ## Dashboard
 
-![Patient Readmission dashboard](https://github.com/user-attachments/assets/6ab2d441-ec97-4386-959b-6da4341d1cc0)
+![Patient Readmission dashboard](<img width="1830" height="777" alt="image" src="https://github.com/user-attachments/assets/9ab922c6-2eb8-4a04-9413-cf45903186ed" />)
 
 [Open the Power BI file](dashboard/Readmission%20Analysis%20Dashboard%20-%20Copy.pbix) · [View the original coursework evidence](evidence/Patient_Readmission_Evidence_Report.pdf)
 
