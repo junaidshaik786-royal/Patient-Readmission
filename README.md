@@ -6,7 +6,7 @@ I used the UCI Diabetes 130-US Hospitals dataset (1999–2008) to explore record
 
 ## Dashboard
 
-![Preview of my existing six-visual Patient Readmission Analytics Dashboard](assets/pateintreadmissionpower_bidashboard.png)
+![Preview of my existing six-visual Patient Readmission Analytics Dashboard](assets/Patient%20readmission%20Power_BI%20dashboard.jpg)
 
 This image is a preview of my existing Power BI dashboard. **The PBIX and dashboard itself have not been changed.**
 
@@ -65,6 +65,6 @@ This is a proposed next step, not stakeholder work completed during this portfol
 
 ## Limitations and disclosure
 
-The dataset is historical (1999–2008), and its characteristics may not represent present-day hospitals. This is an academic portfolio case study, not a hospital deployment. I did not validate a clinical prediction model, establish causes of readmission, work with a real hospital stakeholder, or measure changes in hospital outcomes, workload or cost. Targets in the original coursework brief are proposed targets, not achieved results. The repository publishes aggregate outputs rather than republishing the patient-level CSV.
+The dataset is historical (1999–2008), and its characteristics may not represent present-day hospitals. This is an academic portfolio case study, not a hospital deployment. I did not validate a clinical prediction model, establish causes of readmission, work with a real hospital stakeholder, or measure changes in hospital outcomes, workload or cost. Targets in the original coursework brief are proposed targets, not achieved results. The repository publishes aggregated outputs rather than republishing the patient-level CSV.
 
 **Dataset:** [UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals-for-years-1999-2008).
