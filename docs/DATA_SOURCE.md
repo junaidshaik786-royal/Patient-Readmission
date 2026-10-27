@@ -1,6 +1,6 @@
 # Dataset Provenance and Reproduction
 
-**Primary source:** [UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals+for-years-1999-2008)
+**Primary source:** [UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals-for-years-1999-2008)
 
 **DOI:** https://doi.org/10.24432/C5230J
 
@@ -31,9 +31,9 @@
 2. Open and run [`01_schema.sql`](../sql/01_schema.sql) to create the database and table.
 3. Use the Table Data Import Wizard to import the full CSV into `healthcare.diabetic_data`. Map the CSV headers to the existing table columns and retain `?` values so missingness can be checked.
 4. Open and run [`02_readmission_analysis.sql`](../sql/02_readmission_analysis.sql).
-5. Compare the headline figures with the [KPI dictionary](KPI_DICTIONARY.md) and [SQL run notes](../sql/README.md).
+5. Compare headline figures with the [KPI dictionary](KPI_DICTIONARY.md) and [SQL run notes](../sql/README.md).
 
-The analysis workflow documented for this project is MySQL. No separate code-based validation script is part of the published workflow.
+The workflow documented for this project is MySQL. No separate Python validation script is part of the published workflow.
 
 ## Scope, ethics and credit
 

@@ -2,19 +2,19 @@
 
 **Business Analyst portfolio case study | MySQL · Power BI · Requirements and KPI definition**
 
-I used the UCI Diabetes 130-US Hospitals dataset (1999–2008) to explore how recorded readmission outcomes vary across hospital encounters and selected patient/encounter groups. I treated this as a descriptive reporting problem: define the question, make the counting rules explicit, analyze the data in MySQL, and present the comparisons in the Power BI dashboard.
+I used the UCI Diabetes 130-US Hospitals dataset (1999–2008) to explore recorded readmission outcomes and compare patterns across hospital encounters, age groups, diagnosis counts and selected hospital-use measures. I treated this as a descriptive reporting problem: define the question, make the counting rules explicit, analyze the data in MySQL, and present the comparisons in my existing Power BI dashboard.
 
 ## Dashboard
 
-![Preview of the existing Patient Readmission Analytics Dashboard](assets/patient-readmission-dashboard-preview.jpg)
+![Preview of my existing six-visual Patient Readmission Analytics Dashboard](assets/patient-readmission-dashboard-preview.jpg)
 
-The image above is a preview of my existing six-visual Power BI dashboard. **The PBIX and dashboard itself have not been changed.**
+This image is a preview of my existing Power BI dashboard. **The PBIX and dashboard itself have not been changed.**
 
 [Open the Power BI file](dashboard/Readmission%20Analysis%20Dashboard%20-%20Copy.pbix) · [Dashboard notes](dashboard/README.md)
 
 ## Business question
 
-How are the recorded readmission outcomes distributed across encounters, and what descriptive patterns across age groups, diagnosis counts and hospital-use measures could help a healthcare operations team decide what to investigate further?
+How are recorded readmission outcomes distributed across encounters, and what descriptive patterns across age groups, diagnosis counts and hospital-use measures could help a healthcare operations team decide what to investigate further?
 
 The dataset contains historical U.S. hospital encounter records from 1999–2008. It does not describe current hospital performance.
 
@@ -33,18 +33,18 @@ The dataset contains historical U.S. hospital encounter records from 1999–2008
 
 ## What I did
 
-- Defined the business question and analytical scope, then documented the requirements and business rules in a Business Requirements Document (BRD).
+- Defined the business question and analytical scope, then documented requirements and business rules in a Business Requirements Document (BRD).
 - Defined the KPIs and their counting rules, including the distinction between encounter records and unique patient IDs.
-- Used MySQL to summarize the readmission categories, age groups, diagnosis counts, hospital-use measures and missing values.
+- Used MySQL to summarize readmission categories, age groups, diagnosis counts, hospital-use measures and missing values.
 - Presented the comparisons in my existing Power BI dashboard.
-- Recorded findings, source details, data-quality issues and limitations so the report can be reviewed beyond the visuals.
+- Recorded findings, source details, data-quality issues and limitations so the analysis can be reviewed beyond the visuals.
 
 ## What I learned
 
-- **Grain and denominator come first.** Counting encounters is not the same as counting unique patients; percentages need an explicit denominator.
-- **Missing data affects interpretation.** In this dataset, weight is missing in 96.86% of records, medical specialty in 49.08%, and payer code in 39.56%. That limits what can be responsibly concluded from those fields.
+- **Grain and denominator come first.** Counting encounters is not the same as counting unique patients; each percentage needs an explicit denominator.
+- **Missing data affects interpretation.** Weight is missing in 96.86% of records, medical specialty in 49.08%, and payer code in 39.56%. That limits what can responsibly be concluded from those fields.
 - **Descriptive patterns are not explanations.** Differences between groups do not prove what caused a readmission, establish an individual patient's risk, or validate a clinical prediction model.
-- **A dashboard needs traceable definitions.** Requirements, KPI logic, SQL queries and limitations all matter alongside the visual presentation.
+- **A dashboard needs traceable definitions.** Requirements, KPI logic, SQL queries and limitations matter alongside the visual presentation.
 
 ## What I would do next
 
@@ -67,4 +67,4 @@ This is a proposed next step, not stakeholder work completed during this portfol
 
 The dataset is historical (1999–2008), and its characteristics may not represent present-day hospitals. This is an academic portfolio case study, not a hospital deployment. I did not validate a clinical prediction model, establish causes of readmission, work with a real hospital stakeholder, or measure changes in hospital outcomes, workload or cost. Targets in the original coursework brief are proposed targets, not achieved results. The repository publishes aggregate outputs rather than republishing the patient-level CSV.
 
-**Dataset:** [UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals+for-years-1999-2008).
+**Dataset:** [UCI Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us-hospitals-for-years-1999-2008).
