@@ -1,4 +1,4 @@
 
 # Assets
 
-**It contains POWER BI dashboard svg file**
+**Contains Patient Readmission interactive analysis dashboard svg file**
