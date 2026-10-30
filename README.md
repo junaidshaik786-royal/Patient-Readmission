@@ -54,14 +54,14 @@ This is a proposed next step, not stakeholder work completed during this portfol
 
 ## Explore the project
 
-- [Business Requirements Document](docs/BRD.md) - business question, scope, requirements and business rules.
-- [KPI dictionary](docs/KPI_DICTIONARY.md) - definitions and denominator rules.
-- [Dataset provenance and MySQL reproduction notes](docs/DATA_SOURCE.md) - source, file fingerprint and workflow.
-- [Findings and limitations](docs/FINDINGS_AND_LIMITATIONS.md) — descriptive results and follow-up questions.
-- [Power BI dashboard notes](dashboard/README.md) - what the existing report contains.
-- [MySQL scripts and run instructions](sql/README.md) - database setup and analysis queries.
+- [Business Requirements Document](docs/BRD.md) -> business question, scope, requirements and business rules.
+- [KPI dictionary](docs/KPI_DICTIONARY.md) -> definitions and denominator rules.
+- [Dataset provenance and MySQL reproduction notes](docs/DATA_SOURCE.md) -> source, file fingerprint and workflow.
+- [Findings and limitations](docs/FINDINGS_AND_LIMITATIONS.md) -> descriptive results and follow-up questions.
+- [Power BI dashboard notes](dashboard/README.md) -> what the existing report contains.
+- [MySQL scripts and run instructions](sql/README.md) -> database setup and analysis queries.
 - [Aggregated age-band output](outputs/README.md).
-- [Original coursework evidence](evidence/README.md) - evidence report and original BRD.
+- [Original coursework evidence](evidence/README.md) -> evidence report and original BRD.
 
 ## Limitations and disclosure
 
